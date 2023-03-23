@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/index.css" />
+  </head>
+  <body>
+    <h1>{{ .Title }}</h1>
+    {{ if .DisplayForm}}
+    <form action="/" method="POST">
+      <textarea name="update"></textarea>
+      <div>
+        <button type="submit">Post Update</button>
+      </div>
+    </form>
+    {{ end }} {{ range .Updates }}
+    <div>
+      <div>
+        <strong>{{ .GetUser.GetUsername }} wrote:</strong>
+      </div>
+      <div>{{ .GetBody }}</div>
+    </div>
+    {{ end }}
+  </body>
+</html>
