@@ -151,7 +151,7 @@ func LoginPostHandler(w http.ResponseWriter, r *http.Request) {
 	session.Values["user_id"] = userID
 	session.Save(r, w)
 
-	// after successful login redirect user to the index page
+	// after successful login redirect the user to the index page
 	http.Redirect(w, r, "/", 302)
 }
 
